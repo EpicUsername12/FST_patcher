@@ -1,26 +1,26 @@
-# FST_patcher
-Patcher for WiiU title's FST file!
+# FSTPatcher
+This patcher will let you arbitrarily modify the code and contents of any *legitimate* title.
+
+[Demo Video](https://www.youtube.com/watch?v=ZMmKAt3NI78)
 
 # Disclaimer
-This exploit was found by Maschell in private discussions inside the [4TU discord server](http://fortheusers.org/)
-This is just my implementation + patcher
+This exploit was found by Maschell in private discussions inside the [4TU Discord server](http://fortheusers.org/).
 
-# How does it works
-It will make each File/Dir entry in the [FST file](http://wiiubrew.org/wiki/FST) point to a secondary header with flags 0x0200
-The IOSU, then, will not check if the data is signed or not (it means, you can alter /code, /content, /meta and the IOSU will simply ignore)
+This is just my implementation and patcher.
 
-The patched title needs to be a VALID title at first (system titles, eshop games, etc..)
+# How it works
+Each file/directory entry in the [FST file](http://wiiubrew.org/wiki/FST) will be modified to point to a secondary header with flags 0x0200
 
-**DO NOT ALTER OSv10, YOU WILL BRICK ANYWAYS**
+IOSU then will not properly check the title, and therefore `/code`, `/content`, and `/meta` are freely editable.
+
+The original title needs to be a real Nintendo title (NOT a custom channel), and there are various free titles that can be patched.
+
+**DO NOT ALTER OSv10, YOU WILL DEFINITELY BRICK**
 
 # What can we do?
 Patch a title, then modify it's rpx and give codegen access, allowing for free-of-charge coldboot under a system title. (such as Health and Safety, WiiU chat, Daily Log, etc..)
 
 Just need someone to do it, Maschell had a great free new colboot homebrew environment, but still nothing is public or released.
-
-# Video tutorial: HBL under WiiU Chat (on a stock console, not running CFW)
-https://www.youtube.com/watch?v=ZMmKAt3NI78
-
 
 # How to unpatch a title
 - Remove the every file and subdirectories from: /code, /content, /meta
